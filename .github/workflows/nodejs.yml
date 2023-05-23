@@ -1,0 +1,26 @@
+name: Node CI
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Use Node.js 18
+      uses: actions/setup-node@v3
+      with:
+        node-version: 18
+
+    - name: npm install, lint, build, and test
+      run: |
+        npm config set '//registry.npmjs.org/:_authToken' "${NPM_TOKEN}"
+        yarn install --immutable
+        yarn lint
+        yarn build
+        yarn test --coverage
+      env:
+        NPM_TOKEN: ${{secrets.npm_token}}
+        CI: true
