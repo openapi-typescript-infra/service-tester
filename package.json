@@ -50,7 +50,8 @@
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-jest": "^27.2.1",
     "husky": "^8.0.3",
-    "lint-staged": "^13.2.2"
+    "lint-staged": "^13.2.2",
+    "pinst": "^3.0.0"
   },
   "dependencies": {
     "@types/jest": "^29.5.1",
