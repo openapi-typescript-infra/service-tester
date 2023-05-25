@@ -64,7 +64,8 @@ async function readOptions<
       }
     }
     if (!name) {
-      [, name] = pkg.packageJson.name.split('/');
+      const nameInfo = pkg.packageJson.name.split('/');
+      name = nameInfo[nameInfo.length - 1];
     }
   }
   return {
