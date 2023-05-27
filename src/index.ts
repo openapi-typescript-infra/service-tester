@@ -52,7 +52,7 @@ async function readOptions<
     assert(pkg, 'Could not find package.json');
     let main: string = pkg.packageJson.main || 'src/index.ts';
     if (finalOptions.codepath === 'src') {
-      main = main.replace(/^(\.?\/?)build\//, '$1src/').replace(/\.js$/, '.ts');
+      main = main.replace(/^(\.?\/?)(build|dist)\//, '$1src/').replace(/\.js$/, '.ts');
     }
     if (!factory) {
       const finalPath = path.resolve(rootDirectory, main);
