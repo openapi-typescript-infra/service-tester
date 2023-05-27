@@ -63,3 +63,4 @@ tsconfig.build.json
 jest.config.js
 .prettierrc.js
 .eslintrc.js
+.commitlintrc.json

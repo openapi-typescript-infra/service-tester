@@ -39,13 +39,20 @@
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": "yarn eslint --cache --fix"
   },
+  "release": {
+    "branches": [
+      "main"
+    ]
+  },
   "devDependencies": {
-    "@openapi-typescript-infra/coconfig": "^1.0.0",
-    "@openapi-typescript-infra/service": "^1.0.0",
-    "@types/lodash": "^4.14.194",
+    "@commitlint/cli": "^17.6.3",
+    "@commitlint/config-conventional": "^17.6.3",
+    "@openapi-typescript-infra/coconfig": "^3.0.2",
+    "@openapi-typescript-infra/service": "^1.0.4",
+    "@types/lodash": "^4.14.195",
     "@typescript-eslint/eslint-plugin": "^5.59.7",
     "@typescript-eslint/parser": "^5.59.7",
-    "coconfig": "^0.10.1",
+    "coconfig": "^0.12.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-jest": "^27.2.1",
