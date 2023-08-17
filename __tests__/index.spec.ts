@@ -1,9 +1,7 @@
-import request from 'supertest';
+import { describe, expect, test, vi } from 'vitest';
 import type { Service, ServiceStartOptions } from '@openapi-typescript-infra/service';
 
-import {
-  getReusableApp, clearReusableApp, mockServiceCall, getExistingApp,
-} from '../src';
+import { getReusableApp, clearReusableApp, getExistingApp, request } from '../src';
 
 import { FakeServLocals } from './src/types';
 
@@ -54,11 +52,13 @@ describe('Start and stop shared app', () => {
   });
 
   test('Should make requests', async () => {
-    const app = await getExistingApp<FakeServLocals>();
+    const app = getExistingApp<FakeServLocals>();
     await request(app).get('/').expect(200);
     await request(app).get('/foobar').expect(404);
     await request(app).post('/').expect(500);
-    mockServiceCall(app.locals.services.fakeServ, 'get_something').mockResolvedValue({
+    vi.spyOn(app.locals.services.fakeServ, 'get_something').mockResolvedValue({
+      responseType: 'response',
+      status: 200,
       body: { things: ['a', 'b', 'c'] },
     });
     const { body } = await request(app).post('/').expect(200);
@@ -67,7 +67,7 @@ describe('Start and stop shared app', () => {
   });
 
   test('Should shut down app', async () => {
-    const exapp = await getExistingApp();
+    const exapp = getExistingApp();
     await clearReusableApp();
     expect(flags.started).toEqual(1);
     expect(flags.stopped).toEqual(1);
