@@ -1,6 +1,9 @@
 import path from 'path';
 import assert from 'assert';
 
+// We are going to test Typescript files, so use the ts-node
+// register hook to allow require to resolve these modules
+import { register } from 'ts-node';
 import _ from 'lodash';
 import readPackageUp from 'read-pkg-up';
 import { shutdownApp, startApp } from '@openapi-typescript-infra/service';
@@ -15,6 +18,8 @@ import type {
 
 let app: ServiceExpress | undefined;
 let appService: ServiceFactory<ServiceLocals, RequestLocals> | undefined;
+
+register();
 
 async function loadModule(path: string): Promise<Record<string, unknown>> {
   try {
@@ -111,11 +116,8 @@ export async function getReusableApp<
 
   try {
     const options = await readOptions(cwd || process.cwd(), initialOptions).catch(logFn);
-    console.log('FINAL OPTIONS', options);
     if (!app || appService !== options.service) {
-      console.log('RUN IT');
       typedApp = await startApp(options).catch(logFn);
-      console.log('RAN IT');
       appService = options.service as ServiceFactory<ServiceLocals, RequestLocals>;
       app = typedApp;
       return typedApp;

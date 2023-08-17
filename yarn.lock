@@ -667,7 +667,7 @@ __metadata:
     "@commitlint/cli": ^17.7.1
     "@commitlint/config-conventional": ^17.7.0
     "@openapi-typescript-infra/coconfig": ^4.0.2
-    "@openapi-typescript-infra/service": ^2.0.0
+    "@openapi-typescript-infra/service": ^2.0.1
     "@semantic-release/changelog": ^6.0.3
     "@semantic-release/commit-analyzer": ^10.0.1
     "@semantic-release/exec": ^6.0.3
@@ -696,9 +696,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@openapi-typescript-infra/service@npm:^2.0.0":
-  version: 2.0.0
-  resolution: "@openapi-typescript-infra/service@npm:2.0.0"
+"@openapi-typescript-infra/service@npm:^2.0.1":
+  version: 2.0.1
+  resolution: "@openapi-typescript-infra/service@npm:2.0.1"
   dependencies:
     "@gasbuddy/confit": ^3.0.0
     "@godaddy/terminus": ^4.12.1
@@ -736,7 +736,7 @@ __metadata:
     shortstop-yaml: ^1.0.0
   bin:
     start-service: build/bin/start-service.js
-  checksum: aea02a06b2ee600508738630ad4aadbc0353d545fde2ed5cb0239df295726f9b5109af0bb2e46b161de89fc75e6f9ec95923caa7ce5a790462cb7481a7d45277
+  checksum: e0038aaf58256fbf298406415e57ce752f1724d82d8e17b0519787f35e4273ab0514a9036ee22a2f3418bd826c8a25a7afe328493dda937ac3b7603270638bf1
   languageName: node
   linkType: hard
 
