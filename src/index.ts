@@ -4,7 +4,6 @@ import assert from 'assert';
 import _ from 'lodash';
 import readPackageUp from 'read-pkg-up';
 import { shutdownApp, startApp } from '@openapi-typescript-infra/service';
-import type { JestConfigWithTsJest } from 'ts-jest';
 import type {
   Service,
   RequestLocals,
@@ -16,6 +15,17 @@ import type {
 
 let app: ServiceExpress | undefined;
 let appService: ServiceFactory<ServiceLocals, RequestLocals> | undefined;
+
+async function loadModule(path: string): Promise<Record<string, unknown>> {
+  try {
+    return require(path);
+  } catch (error) {
+    if ((error as Error).message.includes('Cannot use import statement outside a module')) {
+      return import(path);
+    }
+    throw error;
+  }
+}
 
 async function getRootDirectory(cwd: string, root?: string) {
   if (root) {
@@ -56,9 +66,10 @@ async function readOptions<
     }
     if (!factory) {
       const finalPath = path.resolve(rootDirectory, main);
-      // eslint-disable-next-line import/no-dynamic-require, global-require, @typescript-eslint/no-var-requires
-      const module = require(finalPath);
-      factory = (module.default || module.service) as () => Service<SLocals, RLocals>;
+      const module = await loadModule(finalPath);
+      factory = module
+        ? ((module.default || module.service) as () => Service<SLocals, RLocals>)
+        : undefined;
       if (!factory) {
         throw new Error(`Could not find the service method in ${finalPath}`);
       }
@@ -87,8 +98,8 @@ export async function getReusableApp<
   RLocals extends RequestLocals = RequestLocals,
 >(
   initialOptions?:
-  | Partial<ServiceStartOptions<SLocals, RLocals>>
-  | ServiceFactory<SLocals, RLocals>,
+    | Partial<ServiceStartOptions<SLocals, RLocals>>
+    | ServiceFactory<SLocals, RLocals>,
   cwd?: string,
 ): Promise<ServiceExpress<SLocals>> {
   const logFn = (error: Error) => {
@@ -100,8 +111,11 @@ export async function getReusableApp<
 
   try {
     const options = await readOptions(cwd || process.cwd(), initialOptions).catch(logFn);
+    console.log('FINAL OPTIONS', options);
     if (!app || appService !== options.service) {
+      console.log('RUN IT');
       typedApp = await startApp(options).catch(logFn);
+      console.log('RAN IT');
       appService = options.service as ServiceFactory<ServiceLocals, RequestLocals>;
       app = typedApp;
       return typedApp;
@@ -146,50 +160,5 @@ export async function getSimulatedContext(config?: Record<string, JSON>) {
     },
   };
 }
-
-export function mockServiceCall<
-  TargetService extends object,
-  M extends keyof jest.FunctionProperties<Required<TargetService>>,
->(service: TargetService, method: M) {
-  const spy = jest.spyOn(service, method);
-  // I feel like Typescript should've been able to figure this out,
-  // but I couldn't get it to and neither could the Interwebs. So a slightly
-  // unsafe cast it is.
-  type ResponseType = Parameters<typeof spy['mockResolvedValue']>[0];
-  return {
-    mockResolvedValue: (sim: Partial<ResponseType>) => spy.mockResolvedValue({
-      responseType: 'response',
-      status: 200,
-      ...sim,
-      headers: new Headers(sim.headers || {}),
-    } as ResponseType),
-    mockResolvedValueOnce: (sim: Partial<ResponseType>) => spy.mockResolvedValueOnce({
-      responseType: 'response',
-      status: 200,
-      ...sim,
-      headers: new Headers(sim.headers || {}),
-    } as ResponseType),
-    mockRejectedValue: (sim: Partial<ResponseType>) => spy.mockResolvedValueOnce({
-      responseType: 'error',
-      status: 500,
-      ...sim,
-      headers: new Headers(sim.headers || {}),
-    } as ResponseType),
-    mockRejectedValueOnce: (sim: Partial<ResponseType>) => spy.mockResolvedValueOnce({
-      responseType: 'error',
-      ...sim,
-      headers: new Headers(sim.headers || {}),
-    } as ResponseType),
-    spy,
-  };
-}
-
-export const jestConfig: JestConfigWithTsJest = {
-  verbose: true,
-  preset: 'ts-jest',
-  testEnvironment: 'node',
-  testRegex: '(\\.|/)(test|spec)\\.[jt]sx?$',
-  setupFilesAfterEnv: [path.resolve(__dirname, '../build/afterAll.js')],
-};
 
 export { default as request } from 'supertest';
