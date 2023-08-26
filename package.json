@@ -79,6 +79,7 @@
     "read-pkg-up": "^7.0.1",
     "rest-api-support": "^1.16.3",
     "supertest": "^6.3.3",
+    "tsconfig-paths": "^4.2.0",
     "typescript": "^5.1.6"
   },
   "packageManager": "yarn@3.2.3"

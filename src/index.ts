@@ -20,6 +20,7 @@ let app: ServiceExpress | undefined;
 let appService: ServiceFactory<ServiceLocals, RequestLocals> | undefined;
 
 register();
+require('tsconfig-paths/register');
 
 async function loadModule(path: string): Promise<Record<string, unknown>> {
   try {
