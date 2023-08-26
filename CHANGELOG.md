@@ -1,3 +1,10 @@
+## [2.0.1](https://github.com/openapi-typescript-infra/service-tester/compare/v2.0.0...v2.0.1) (2023-08-26)
+
+
+### Bug Fixes
+
+* **paths:** register tsconfig-paths to get proper module resolution ([0641402](https://github.com/openapi-typescript-infra/service-tester/commit/0641402754c3d7d7a754b74fb22001c4f30df48a))
+
 # [2.0.0](https://github.com/openapi-typescript-infra/service-tester/compare/v1.0.6...v2.0.0) (2023-08-17)
 
 
