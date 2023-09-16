@@ -52,35 +52,35 @@
   "devDependencies": {
     "@commitlint/cli": "^17.7.1",
     "@commitlint/config-conventional": "^17.7.0",
-    "@openapi-typescript-infra/coconfig": "^4.0.2",
-    "@openapi-typescript-infra/service": "^2.0.1",
+    "@openapi-typescript-infra/coconfig": "^4.1.0",
+    "@openapi-typescript-infra/service": "^2.6.3",
     "@semantic-release/changelog": "^6.0.3",
-    "@semantic-release/commit-analyzer": "^10.0.1",
+    "@semantic-release/commit-analyzer": "^10.0.4",
     "@semantic-release/exec": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
-    "@semantic-release/release-notes-generator": "^11.0.4",
-    "@types/lodash": "^4.14.197",
-    "@typescript-eslint/eslint-plugin": "^6.4.0",
-    "@typescript-eslint/parser": "^6.4.0",
-    "@vitest/coverage-v8": "^0.34.2",
+    "@semantic-release/release-notes-generator": "^11.0.7",
+    "@types/lodash": "^4.14.198",
+    "@typescript-eslint/eslint-plugin": "^6.7.0",
+    "@typescript-eslint/parser": "^6.7.0",
+    "@vitest/coverage-v8": "^0.34.4",
     "coconfig": "^0.13.3",
     "eslint-config-prettier": "^9.0.0",
-    "eslint-plugin-import": "^2.28.0",
-    "eslint-plugin-jest": "^27.2.3",
+    "eslint-plugin-import": "^2.28.1",
     "ts-node": "^10.9.1",
-    "vitest": "^0.34.2"
+    "vitest": "^0.34.4"
   },
   "dependencies": {
     "@types/supertest": "^2.0.12",
-    "eslint": "^8.47.0",
+    "eslint": "^8.49.0",
     "find-up": "^6.3.0",
     "lodash": "^4.17.21",
     "pino-pretty": "^10.2.0",
     "read-pkg-up": "^7.0.1",
     "rest-api-support": "^1.16.3",
     "supertest": "^6.3.3",
+    "supertest-fetch": "^1.5.0",
     "tsconfig-paths": "^4.2.0",
-    "typescript": "^5.1.6"
+    "typescript": "^5.2.2"
   },
   "packageManager": "yarn@3.2.3"
 }

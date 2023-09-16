@@ -1,6 +1,8 @@
 import path from 'path';
 import assert from 'assert';
 
+import request from 'supertest';
+import { makeFetch } from 'supertest-fetch';
 // We are going to test Typescript files, so use the ts-node
 // register hook to allow require to resolve these modules
 import { register } from 'ts-node';
@@ -99,6 +101,22 @@ export function getExistingApp<SLocals extends ServiceLocals = ServiceLocals>() 
   return app as ServiceExpress<SLocals>;
 }
 
+class RequestTestingHelpers {
+  _fetch: ReturnType<typeof makeFetch>;
+
+  constructor(private app: ServiceExpress) {
+    this._fetch = makeFetch(app as unknown as Parameters<typeof makeFetch>[0]);
+  }
+
+  get request() {
+    return request(this.app);
+  }
+
+  get fetch() {
+    return this._fetch as unknown as typeof fetch;
+  }
+}
+
 export async function getReusableApp<
   SLocals extends ServiceLocals = ServiceLocals,
   RLocals extends RequestLocals = RequestLocals,
@@ -107,21 +125,23 @@ export async function getReusableApp<
     | Partial<ServiceStartOptions<SLocals, RLocals>>
     | ServiceFactory<SLocals, RLocals>,
   cwd?: string,
-): Promise<ServiceExpress<SLocals>> {
+): Promise<ServiceExpress<SLocals> & { test: RequestTestingHelpers }> {
   const logFn = (error: Error) => {
     // eslint-disable-next-line no-console
     console.error('Could not start app', error);
     throw error;
   };
-  let typedApp = app as ServiceExpress<SLocals>;
+  let typedApp = app as ServiceExpress<SLocals> & { test: RequestTestingHelpers };
 
   try {
     const options = await readOptions(cwd || process.cwd(), initialOptions).catch(logFn);
     if (!app || appService !== options.service) {
-      typedApp = await startApp(options).catch(logFn);
+      const untypedApp = await startApp(options).catch(logFn);
+      typedApp = Object.assign(untypedApp, {
+        test: new RequestTestingHelpers(untypedApp),
+      });
       appService = options.service as ServiceFactory<ServiceLocals, RequestLocals>;
       app = typedApp;
-      return typedApp;
     }
     return typedApp;
   } catch (error) {
