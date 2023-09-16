@@ -1,3 +1,10 @@
+# [2.1.0](https://github.com/openapi-typescript-infra/service-tester/compare/v2.0.1...v2.1.0) (2023-09-16)
+
+
+### Features
+
+* **fetch:** make it easier to generate typed clients for testing ([541fcfc](https://github.com/openapi-typescript-infra/service-tester/commit/541fcfc2391751fe7b9b86895b87005110f5250c))
+
 ## [2.0.1](https://github.com/openapi-typescript-infra/service-tester/compare/v2.0.0...v2.0.1) (2023-08-26)
 
 
