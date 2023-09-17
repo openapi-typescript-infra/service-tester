@@ -94,13 +94,6 @@ async function readOptions<
   };
 }
 
-export function getExistingApp<SLocals extends ServiceLocals = ServiceLocals>() {
-  if (!app) {
-    throw new Error('getExistingApp requires a running app, and there is not one available.');
-  }
-  return app as ServiceExpress<SLocals>;
-}
-
 class RequestTestingHelpers {
   _fetch: ReturnType<typeof makeFetch>;
 
@@ -117,6 +110,18 @@ class RequestTestingHelpers {
   }
 }
 
+export interface ServiceUnderTest<SLocals extends ServiceLocals = ServiceLocals>
+  extends ServiceExpress<SLocals> {
+  test: RequestTestingHelpers;
+}
+
+export function getExistingApp<SLocals extends ServiceLocals = ServiceLocals>() {
+  if (!app) {
+    throw new Error('getExistingApp requires a running app, and there is not one available.');
+  }
+  return app as ServiceUnderTest<SLocals>;
+}
+
 export async function getReusableApp<
   SLocals extends ServiceLocals = ServiceLocals,
   RLocals extends RequestLocals = RequestLocals,
@@ -125,7 +130,7 @@ export async function getReusableApp<
     | Partial<ServiceStartOptions<SLocals, RLocals>>
     | ServiceFactory<SLocals, RLocals>,
   cwd?: string,
-): Promise<ServiceExpress<SLocals> & { test: RequestTestingHelpers }> {
+): Promise<ServiceUnderTest<SLocals>> {
   const logFn = (error: Error) => {
     // eslint-disable-next-line no-console
     console.error('Could not start app', error);
