@@ -1,3 +1,10 @@
+## [2.1.1](https://github.com/openapi-typescript-infra/service-tester/compare/v2.1.0...v2.1.1) (2023-09-17)
+
+
+### Bug Fixes
+
+* **types:** cleanup testing helper types ([27f6501](https://github.com/openapi-typescript-infra/service-tester/commit/27f6501b8d2e402937948f779cd876c93f4623d4))
+
 # [2.1.0](https://github.com/openapi-typescript-infra/service-tester/compare/v2.0.1...v2.1.0) (2023-09-16)
 
 
