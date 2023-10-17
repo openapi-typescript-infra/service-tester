@@ -1,3 +1,15 @@
+# [3.0.0](https://github.com/openapi-typescript-infra/service-tester/compare/v2.1.1...v3.0.0) (2023-10-17)
+
+
+### Features
+
+* **deps:** upgrade to new service module ([d759082](https://github.com/openapi-typescript-infra/service-tester/commit/d75908246598f53550788daf26a39ec8949a0717))
+
+
+### BREAKING CHANGES
+
+* **deps:** config is now typed
+
 ## [2.1.1](https://github.com/openapi-typescript-infra/service-tester/compare/v2.1.0...v2.1.1) (2023-09-17)
 
 
