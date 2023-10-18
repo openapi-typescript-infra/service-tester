@@ -6,7 +6,6 @@ import { makeFetch } from 'supertest-fetch';
 // We are going to test Typescript files, so use the ts-node
 // register hook to allow require to resolve these modules
 import { register } from 'ts-node';
-import _ from 'lodash';
 import readPackageUp from 'read-pkg-up';
 import { shutdownApp, startApp } from '@openapi-typescript-infra/service';
 import type {
@@ -174,14 +173,12 @@ export async function clearReusableApp() {
   appService = undefined;
 }
 
-export async function getSimulatedContext(config?: Record<string, JSON>) {
+export async function getSimulatedContext<Config extends ConfigurationSchema = ConfigurationSchema>(
+  config?: Config,
+) {
   return {
     name: 'fake-serv',
-    config: {
-      get(key: string) {
-        return _.get(config || {}, key.split(':'));
-      },
-    },
+    config: config || ({} as Config),
     logger: {
       level: 'debug',
       silent() {
