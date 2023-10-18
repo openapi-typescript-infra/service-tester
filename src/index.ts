@@ -61,6 +61,7 @@ async function readOptions<
     isServiceFn ? undefined : options?.rootDirectory,
   );
   let name = isServiceFn ? undefined : options?.name;
+  let version = isServiceFn ? undefined : options?.version;
   const finalOptions = {
     codepath: 'src',
     rootDirectory,
@@ -87,9 +88,13 @@ async function readOptions<
       const nameInfo = pkg.packageJson.name.split('/');
       name = nameInfo[nameInfo.length - 1];
     }
+    if (!version) {
+      version = pkg.packageJson.version;
+    }
   }
   return {
     name,
+    version: version || '0.0.0',
     ...finalOptions,
     service: factory,
   };
@@ -178,6 +183,7 @@ export async function getSimulatedContext<Config extends ConfigurationSchema = C
 ) {
   return {
     name: 'fake-serv',
+    version: '1.0.0',
     config: config || ({} as Config),
     logger: {
       level: 'debug',

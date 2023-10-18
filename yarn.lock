@@ -669,13 +669,13 @@ __metadata:
     "@commitlint/cli": ^17.8.0
     "@commitlint/config-conventional": ^17.8.0
     "@openapi-typescript-infra/coconfig": ^4.2.1
-    "@openapi-typescript-infra/service": ^4.0.0
+    "@openapi-typescript-infra/service": ^4.1.1
     "@semantic-release/changelog": ^6.0.3
     "@semantic-release/commit-analyzer": ^11.0.0
     "@semantic-release/exec": ^6.0.3
     "@semantic-release/git": ^10.0.1
     "@semantic-release/release-notes-generator": ^12.0.0
-    "@types/supertest": ^2.0.14
+    "@types/supertest": ^2.0.15
     "@typescript-eslint/eslint-plugin": ^6.8.0
     "@typescript-eslint/parser": ^6.8.0
     "@vitest/coverage-v8": ^0.34.6
@@ -698,9 +698,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@openapi-typescript-infra/service@npm:^4.0.0":
-  version: 4.0.0
-  resolution: "@openapi-typescript-infra/service@npm:4.0.0"
+"@openapi-typescript-infra/service@npm:^4.1.1":
+  version: 4.1.1
+  resolution: "@openapi-typescript-infra/service@npm:4.1.1"
   dependencies:
     "@godaddy/terminus": ^4.12.1
     "@opentelemetry/api": ^1.6.0
@@ -737,7 +737,7 @@ __metadata:
     read-pkg-up: ^7.0.1
   bin:
     start-service: build/bin/start-service.js
-  checksum: b74319ac02dcd216f4d298b24308721166b27d700e6c1d39f51cfc20547f21597cc2922b28e85b0ec50301f6752ee62f735b751ad648d228e55d8969c2a45c54
+  checksum: a43dc8915a4394d172ec4fcab1ec4ad1bec7689c356f4f67ad607eecdc62904b7efb8b30057bfcc3e14641231d922387d586b4edc3c6cdcac17be7f00bcfa1f3
   languageName: node
   linkType: hard
 
@@ -1853,12 +1853,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/supertest@npm:^2.0.14":
-  version: 2.0.14
-  resolution: "@types/supertest@npm:2.0.14"
+"@types/supertest@npm:^2.0.15":
+  version: 2.0.15
+  resolution: "@types/supertest@npm:2.0.15"
   dependencies:
     "@types/superagent": "*"
-  checksum: 9f6850a22b8f0fd4c26a6dfd9b64771a66476b1a4f841a3b84a9da843ce69463efbf37594fe107297dd14a225d199b802464d48d70e9413238c637903d392137
+  checksum: 89c1983662f0ab20969b3a6c44344397fd222d0f78b282619aabbe817f7c88a64210fd2b8b8f075ea22a27084e30ebc287bc5105619cbbf9af7f008e77f6eb93
   languageName: node
   linkType: hard
 
