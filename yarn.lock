@@ -669,7 +669,7 @@ __metadata:
     "@commitlint/cli": ^17.8.0
     "@commitlint/config-conventional": ^17.8.0
     "@openapi-typescript-infra/coconfig": ^4.2.1
-    "@openapi-typescript-infra/service": ^3.0.1
+    "@openapi-typescript-infra/service": ^3.0.2
     "@semantic-release/changelog": ^6.0.3
     "@semantic-release/commit-analyzer": ^11.0.0
     "@semantic-release/exec": ^6.0.3
@@ -700,9 +700,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@openapi-typescript-infra/service@npm:^3.0.1":
-  version: 3.0.1
-  resolution: "@openapi-typescript-infra/service@npm:3.0.1"
+"@openapi-typescript-infra/service@npm:^3.0.2":
+  version: 3.0.2
+  resolution: "@openapi-typescript-infra/service@npm:3.0.2"
   dependencies:
     "@godaddy/terminus": ^4.12.1
     "@opentelemetry/api": ^1.6.0
@@ -725,7 +725,7 @@ __metadata:
     "@opentelemetry/sdk-node": ^0.43.0
     "@opentelemetry/sdk-trace-base": ^1.17.1
     "@opentelemetry/semantic-conventions": ^1.17.1
-    "@sesamecare-oss/confit": ^1.0.6
+    "@sesamecare-oss/confit": ^1.1.0
     "@sesamecare-oss/opentelemetry-node-metrics": ^1.0.1
     cookie-parser: ^1.4.6
     dotenv: ^16.3.1
@@ -738,10 +738,9 @@ __metadata:
     opentelemetry-instrumentation-fetch-node: ^1.1.0
     pino: ^8.16.0
     read-pkg-up: ^7.0.1
-    rest-api-support: ^1.16.3
   bin:
     start-service: build/bin/start-service.js
-  checksum: da56e84e714e7db3eeab6e45987b6c3c45bde58c844e346df706c843af1cdc06efaa1ba302958a45a2f920185e3fc83add59a7f17d24be45b99f3e62c8d60ce2
+  checksum: 1a622c790a8c4dcaba609ff92dab602b1372acab7c54a1547f4ecc43e4444fa9cd86f1d157ca46b3dd10efaca0767478f76b53d692554e94932fd7442bc1b04b
   languageName: node
   linkType: hard
 
@@ -1546,7 +1545,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sesamecare-oss/confit@npm:^1.0.6":
+"@sesamecare-oss/confit@npm:^1.1.0":
   version: 1.1.0
   resolution: "@sesamecare-oss/confit@npm:1.1.0"
   dependencies:
