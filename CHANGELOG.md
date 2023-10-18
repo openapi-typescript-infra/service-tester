@@ -1,3 +1,10 @@
+## [3.0.1](https://github.com/openapi-typescript-infra/service-tester/compare/v3.0.0...v3.0.1) (2023-10-18)
+
+
+### Bug Fixes
+
+* **deps:** get latest service module for better types ([6fa6ca4](https://github.com/openapi-typescript-infra/service-tester/commit/6fa6ca44b366fe55cfaebdd46256c0125591a5f4))
+
 # [3.0.0](https://github.com/openapi-typescript-infra/service-tester/compare/v2.1.1...v3.0.0) (2023-10-17)
 
 
