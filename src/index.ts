@@ -16,6 +16,8 @@ import type {
   ServiceExpress,
   ServiceLocals,
   ServiceStartOptions,
+  AnyServiceLocals,
+  ConfigurationSchema,
 } from '@openapi-typescript-infra/service';
 
 let app: ServiceExpress | undefined;
@@ -47,7 +49,7 @@ async function getRootDirectory(cwd: string, root?: string) {
 }
 
 async function readOptions<
-  SLocals extends ServiceLocals = ServiceLocals,
+  SLocals extends AnyServiceLocals = ServiceLocals<ConfigurationSchema>,
   RLocals extends RequestLocals = RequestLocals,
 >(
   cwd: string,
@@ -110,12 +112,15 @@ class RequestTestingHelpers {
   }
 }
 
-export interface ServiceUnderTest<SLocals extends ServiceLocals = ServiceLocals>
-  extends ServiceExpress<SLocals> {
+export interface ServiceUnderTest<
+  SLocals extends AnyServiceLocals = ServiceLocals<ConfigurationSchema>,
+> extends ServiceExpress<SLocals> {
   test: RequestTestingHelpers;
 }
 
-export function getExistingApp<SLocals extends ServiceLocals = ServiceLocals>() {
+export function getExistingApp<
+  SLocals extends AnyServiceLocals = ServiceLocals<ConfigurationSchema>,
+>() {
   if (!app) {
     throw new Error('getExistingApp requires a running app, and there is not one available.');
   }
@@ -123,7 +128,7 @@ export function getExistingApp<SLocals extends ServiceLocals = ServiceLocals>() 
 }
 
 export async function getReusableApp<
-  SLocals extends ServiceLocals = ServiceLocals,
+  SLocals extends AnyServiceLocals = ServiceLocals<ConfigurationSchema>,
   RLocals extends RequestLocals = RequestLocals,
 >(
   initialOptions?:
