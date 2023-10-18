@@ -1,3 +1,16 @@
+# [4.0.0](https://github.com/openapi-typescript-infra/service-tester/compare/v3.0.2...v4.0.0) (2023-10-18)
+
+
+### Features
+
+* **config:** expose raw config ([0e4351c](https://github.com/openapi-typescript-infra/service-tester/commit/0e4351ca6473debe8ed0bfbfbea77be856cef1f9))
+
+
+### BREAKING CHANGES
+
+* **config:** minor change to getSimulatedContext to take and give
+a typed config object instead of a getter method.
+
 ## [3.0.2](https://github.com/openapi-typescript-infra/service-tester/compare/v3.0.1...v3.0.2) (2023-10-18)
 
 
