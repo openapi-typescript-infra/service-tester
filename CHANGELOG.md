@@ -1,3 +1,10 @@
+## [3.0.2](https://github.com/openapi-typescript-infra/service-tester/compare/v3.0.1...v3.0.2) (2023-10-18)
+
+
+### Bug Fixes
+
+* **types:** clean up some app types ([a009003](https://github.com/openapi-typescript-infra/service-tester/commit/a0090037de4918da167fc9e631889588c9c888a0))
+
 ## [3.0.1](https://github.com/openapi-typescript-infra/service-tester/compare/v3.0.0...v3.0.1) (2023-10-18)
 
 
