@@ -1,3 +1,10 @@
+## [4.0.1](https://github.com/openapi-typescript-infra/service-tester/compare/v4.0.0...v4.0.1) (2023-10-18)
+
+
+### Bug Fixes
+
+* **version:** add version info to app startup flow ([cfd427f](https://github.com/openapi-typescript-infra/service-tester/commit/cfd427fc41d54ce70051a43d9688782b49b233a9))
+
 # [4.0.0](https://github.com/openapi-typescript-infra/service-tester/compare/v3.0.2...v4.0.0) (2023-10-18)
 
 
