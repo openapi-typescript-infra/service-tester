@@ -1,3 +1,10 @@
+## [4.0.2](https://github.com/openapi-typescript-infra/service-tester/compare/v4.0.1...v4.0.2) (2023-10-24)
+
+
+### Bug Fixes
+
+* **shutdown:** handle simultaneous shutdown ([f8d68a1](https://github.com/openapi-typescript-infra/service-tester/commit/f8d68a1c7ca83b32d270309f57b9a3131db13bcf))
+
 ## [4.0.1](https://github.com/openapi-typescript-infra/service-tester/compare/v4.0.0...v4.0.1) (2023-10-18)
 
 
