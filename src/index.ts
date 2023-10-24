@@ -166,16 +166,17 @@ export async function getReusableApp<
 }
 
 export async function clearReusableApp() {
+  const oldApp = app;
+  app = undefined;
+  appService = undefined;
   try {
-    if (app) {
-      await shutdownApp(app);
+    if (oldApp) {
+      await shutdownApp(oldApp);
     }
   } catch (error) {
     // eslint-disable-next-line no-console
     console.error('Shared app shutdown failed', error);
   }
-  app = undefined;
-  appService = undefined;
 }
 
 export async function getSimulatedContext<Config extends ConfigurationSchema = ConfigurationSchema>(
