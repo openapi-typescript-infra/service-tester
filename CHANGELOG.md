@@ -1,3 +1,10 @@
+## [4.0.3](https://github.com/openapi-typescript-infra/service-tester/compare/v4.0.2...v4.0.3) (2023-11-06)
+
+
+### Bug Fixes
+
+* **deps:** get latest deps ([ef9ed22](https://github.com/openapi-typescript-infra/service-tester/commit/ef9ed22807100cae9f092f32c099103db116a570))
+
 ## [4.0.2](https://github.com/openapi-typescript-infra/service-tester/compare/v4.0.1...v4.0.2) (2023-10-24)
 
 
