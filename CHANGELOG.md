@@ -1,3 +1,17 @@
+# [5.0.0](https://github.com/openapi-typescript-infra/service-tester/compare/v4.0.3...v5.0.0) (2024-04-28)
+
+
+### Bug Fixes
+
+* **ci:** update workflow actions ([876a534](https://github.com/openapi-typescript-infra/service-tester/commit/876a53494256aec421c74ab4cc5a33b0519738f8))
+* **fetch:** remove supertest fetch as it is unnecessary ([e49f3bb](https://github.com/openapi-typescript-infra/service-tester/commit/e49f3bba2fc51f8b14c05d1f016eb23e5a22081c))
+* **yarn:** bump yarn version ([30da748](https://github.com/openapi-typescript-infra/service-tester/commit/30da748fac232fd69eee2abcf4f5807a5c68bb10))
+
+
+### BREAKING CHANGES
+
+* **fetch:** no more supertest fetch
+
 ## [4.0.3](https://github.com/openapi-typescript-infra/service-tester/compare/v4.0.2...v4.0.3) (2023-11-06)
 
 
