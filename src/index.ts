@@ -2,7 +2,6 @@ import path from 'path';
 import assert from 'assert';
 
 import request from 'supertest';
-import { makeFetch } from 'supertest-fetch';
 // We are going to test Typescript files, so use the ts-node
 // register hook to allow require to resolve these modules
 import { register } from 'ts-node';
@@ -101,18 +100,11 @@ async function readOptions<
 }
 
 class RequestTestingHelpers {
-  _fetch: ReturnType<typeof makeFetch>;
-
   constructor(private app: ServiceExpress) {
-    this._fetch = makeFetch(app as unknown as Parameters<typeof makeFetch>[0]);
   }
 
   get request() {
     return request(this.app);
-  }
-
-  get fetch() {
-    return this._fetch as unknown as typeof fetch;
   }
 }
 
