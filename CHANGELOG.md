@@ -1,3 +1,10 @@
+# [5.1.0](https://github.com/openapi-typescript-infra/service-tester/compare/v5.0.0...v5.1.0) (2024-04-29)
+
+
+### Features
+
+* **app:** listen on a port for the app to make openapi testing work properly ([76c0888](https://github.com/openapi-typescript-infra/service-tester/commit/76c0888a08aa3f84dbd503e601c71e1aa26632e1))
+
 # [5.0.0](https://github.com/openapi-typescript-infra/service-tester/compare/v4.0.3...v5.0.0) (2024-04-28)
 
 
