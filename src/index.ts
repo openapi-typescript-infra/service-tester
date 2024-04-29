@@ -1,3 +1,4 @@
+import http from 'http';
 import path from 'path';
 import assert from 'assert';
 
@@ -6,7 +7,7 @@ import request from 'supertest';
 // register hook to allow require to resolve these modules
 import { register } from 'ts-node';
 import readPackageUp from 'read-pkg-up';
-import { shutdownApp, startApp } from '@openapi-typescript-infra/service';
+import { listen, startApp } from '@openapi-typescript-infra/service';
 import type {
   Service,
   RequestLocals,
@@ -20,6 +21,7 @@ import type {
 
 let app: ServiceExpress | undefined;
 let appService: ServiceFactory<ServiceLocals, RequestLocals> | undefined;
+let listener: http.Server | undefined;
 
 register();
 require('tsconfig-paths/register');
@@ -148,6 +150,7 @@ export async function getReusableApp<
       });
       appService = options.service as ServiceFactory<ServiceLocals, RequestLocals>;
       app = typedApp;
+      listener = await listen(typedApp);
     }
     return typedApp;
   } catch (error) {
@@ -158,12 +161,14 @@ export async function getReusableApp<
 }
 
 export async function clearReusableApp() {
-  const oldApp = app;
+  const oldListener = listener;
   app = undefined;
   appService = undefined;
   try {
-    if (oldApp) {
-      await shutdownApp(oldApp);
+    if (oldListener) {
+      return new Promise((resolve) => {
+        oldListener?.close(resolve);
+      });
     }
   } catch (error) {
     // eslint-disable-next-line no-console
