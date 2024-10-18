@@ -1,12 +1,13 @@
 import http from 'http';
 import path from 'path';
+// We are going to test Typescript files, so use the ts-node
+// register hook to allow require to resolve these modules
+import { register } from 'node:module'
+import { pathToFileURL } from 'url'
 import assert from 'assert';
 
 import request from 'supertest';
-// We are going to test Typescript files, so use the ts-node
-// register hook to allow require to resolve these modules
-import { register } from 'ts-node';
-import readPackageUp from 'read-pkg-up';
+import { readPackageUp } from 'read-package-up';
 import { listen, startApp } from '@openapi-typescript-infra/service';
 import type {
   Service,
@@ -23,19 +24,9 @@ let app: ServiceExpress | undefined;
 let appService: ServiceFactory<ServiceLocals, RequestLocals> | undefined;
 let listener: http.Server | undefined;
 
-register();
+register('ts-node/esm', pathToFileURL('./'))
+// eslint-disable-next-line @typescript-eslint/no-require-imports
 require('tsconfig-paths/register');
-
-async function loadModule(path: string): Promise<Record<string, unknown>> {
-  try {
-    return require(path);
-  } catch (error) {
-    if ((error as Error).message.includes('Cannot use import statement outside a module')) {
-      return import(path);
-    }
-    throw error;
-  }
-}
 
 async function getRootDirectory(cwd: string, root?: string) {
   if (root) {
@@ -77,7 +68,7 @@ async function readOptions<
     }
     if (!factory) {
       const finalPath = path.resolve(rootDirectory, main);
-      const module = await loadModule(finalPath);
+      const module = await import(finalPath);
       factory = module
         ? ((module.default || module.service) as () => Service<SLocals, RLocals>)
         : undefined;

@@ -1,9 +1,9 @@
 import { describe, expect, test, vi } from 'vitest';
 import type { Service, ServiceStartOptions } from '@openapi-typescript-infra/service';
 
-import { getReusableApp, clearReusableApp, getExistingApp, request } from '../src';
+import { getReusableApp, clearReusableApp, getExistingApp, request } from '../src/index.js';
 
-import { FakeServLocals } from './src/types';
+import { FakeServLocals } from './src/types.js';
 
 function getFakeServiceFn(flags: {
   started: number;
