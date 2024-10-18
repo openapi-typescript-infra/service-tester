@@ -1,3 +1,10 @@
+## [6.0.1](https://github.com/openapi-typescript-infra/service-tester/compare/v6.0.0...v6.0.1) (2024-10-18)
+
+
+### Bug Fixes
+
+* move away from tsconfig-paths for now ([90fda18](https://github.com/openapi-typescript-infra/service-tester/commit/90fda181f086216b47b5ecf9d4d772e0d2d0c0e3))
+
 # [6.0.0](https://github.com/openapi-typescript-infra/service-tester/compare/v5.1.0...v6.0.0) (2024-10-18)
 
 
