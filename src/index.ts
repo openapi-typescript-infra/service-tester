@@ -25,8 +25,6 @@ let appService: ServiceFactory<ServiceLocals, RequestLocals> | undefined;
 let listener: http.Server | undefined;
 
 register('ts-node/esm', pathToFileURL('./'))
-// eslint-disable-next-line @typescript-eslint/no-require-imports
-require('tsconfig-paths/register');
 
 async function getRootDirectory(cwd: string, root?: string) {
   if (root) {

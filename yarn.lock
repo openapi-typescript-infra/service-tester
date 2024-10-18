@@ -696,7 +696,7 @@ __metadata:
     "@commitlint/cli": ^19.5.0
     "@commitlint/config-conventional": ^19.5.0
     "@openapi-typescript-infra/coconfig": ^4.4.0
-    "@openapi-typescript-infra/service": ^5.1.0
+    "@openapi-typescript-infra/service": ^5.1.1
     "@semantic-release/changelog": ^6.0.3
     "@semantic-release/commit-analyzer": ^13.0.0
     "@semantic-release/exec": ^6.0.3
@@ -725,9 +725,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@openapi-typescript-infra/service@npm:^5.1.0":
-  version: 5.1.0
-  resolution: "@openapi-typescript-infra/service@npm:5.1.0"
+"@openapi-typescript-infra/service@npm:^5.1.1":
+  version: 5.1.1
+  resolution: "@openapi-typescript-infra/service@npm:5.1.1"
   dependencies:
     "@godaddy/terminus": ^4.12.1
     "@opentelemetry/api": ^1.9.0
@@ -761,7 +761,7 @@ __metadata:
     request-ip: ^3.3.0
   bin:
     start-service: build/bin/start-service.js
-  checksum: a1098670dbe4962ad18434e7a018dabf2563132a76f2871725721d164f55f177b8585cfc81fbf83a64420eab6cfa5b0ac1c7ee745e09a59e61da073ed1efc1d1
+  checksum: a0c6659aae92aa79ca186a51df82318842962729354ebde8e260f7863f64f73f991ae39383ce077660e94e210344bb980884fe07f5fa874ee64d2b1c0d3911ff
   languageName: node
   linkType: hard
 
