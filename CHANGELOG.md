@@ -1,3 +1,15 @@
+# [6.0.0](https://github.com/openapi-typescript-infra/service-tester/compare/v5.1.0...v6.0.0) (2024-10-18)
+
+
+### Features
+
+* Move to ESM ([84b50eb](https://github.com/openapi-typescript-infra/service-tester/commit/84b50ebafd28baa454b2ba2d6bdf37b48f9e15d0))
+
+
+### BREAKING CHANGES
+
+* Move to ESM
+
 # [5.1.0](https://github.com/openapi-typescript-infra/service-tester/compare/v5.0.0...v5.1.0) (2024-04-29)
 
 
