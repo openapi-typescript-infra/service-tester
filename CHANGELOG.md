@@ -1,3 +1,10 @@
+# [6.1.0](https://github.com/openapi-typescript-infra/service-tester/compare/v6.0.2...v6.1.0) (2024-10-19)
+
+
+### Features
+
+* move to tsx for dev-time loader ([20bfc94](https://github.com/openapi-typescript-infra/service-tester/commit/20bfc9427bcda991894a0ceaf11ee0cf18442712))
+
 ## [6.0.2](https://github.com/openapi-typescript-infra/service-tester/compare/v6.0.1...v6.0.2) (2024-10-19)
 
 
