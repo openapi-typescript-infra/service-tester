@@ -1,3 +1,11 @@
+## [6.1.1](https://github.com/openapi-typescript-infra/service-tester/compare/v6.1.0...v6.1.1) (2024-10-19)
+
+
+### Bug Fixes
+
+* minor dep update of coconfig ([9c21ae0](https://github.com/openapi-typescript-infra/service-tester/commit/9c21ae0770928fb3f185676a8e80b566ab1a0861))
+* no more ts-node ([0328b9e](https://github.com/openapi-typescript-infra/service-tester/commit/0328b9ee07c5424bc65a259b6732ed0b21062d68))
+
 # [6.1.0](https://github.com/openapi-typescript-infra/service-tester/compare/v6.0.2...v6.1.0) (2024-10-19)
 
 
