@@ -8,7 +8,7 @@ import assert from 'assert';
 
 import request from 'supertest';
 import { readPackageUp } from 'read-package-up';
-import { listen, startApp } from '@openapi-typescript-infra/service';
+import { listen, startApp, startGlobalTelemetry } from '@openapi-typescript-infra/service';
 import type {
   Service,
   RequestLocals,
@@ -24,7 +24,7 @@ let app: ServiceExpress | undefined;
 let appService: ServiceFactory<ServiceLocals, RequestLocals> | undefined;
 let listener: http.Server | undefined;
 
-register('ts-node/esm', pathToFileURL('./'))
+register('ts-node/esm', pathToFileURL('./'));
 
 async function getRootDirectory(cwd: string, root?: string) {
   if (root) {
@@ -112,6 +112,10 @@ export function getExistingApp<
     throw new Error('getExistingApp requires a running app, and there is not one available.');
   }
   return app as ServiceUnderTest<SLocals>;
+}
+
+export async function enableTelemetry(name: string) {
+  return startGlobalTelemetry(name);
 }
 
 export async function getReusableApp<

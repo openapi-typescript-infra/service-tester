@@ -682,10 +682,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@openapi-typescript-infra/coconfig@npm:^4.4.0":
-  version: 4.4.0
-  resolution: "@openapi-typescript-infra/coconfig@npm:4.4.0"
-  checksum: cb6d9f180dd78c4b45e10c3b8df491c0eb763fb0bef79c225eecad9ace78073c64eaf2472efdf9d0bd73ce012d8a7384719bed2b0edeb7ca6b71bfb9ff8ff2b5
+"@openapi-typescript-infra/coconfig@npm:^4.5.0":
+  version: 4.5.0
+  resolution: "@openapi-typescript-infra/coconfig@npm:4.5.0"
+  checksum: 5f0eacbc9588ae7ec1984265e978e65d15c8a06c9f1cc181f249b1cbf09928f500e62501b636895c87ebdd67a92a5ba0ae091bd8a12303b2386108e8fc01c1f1
   languageName: node
   linkType: hard
 
@@ -695,14 +695,14 @@ __metadata:
   dependencies:
     "@commitlint/cli": ^19.5.0
     "@commitlint/config-conventional": ^19.5.0
-    "@openapi-typescript-infra/coconfig": ^4.4.0
-    "@openapi-typescript-infra/service": ^5.1.1
+    "@openapi-typescript-infra/coconfig": ^4.5.0
+    "@openapi-typescript-infra/service": ^5.1.2
     "@semantic-release/changelog": ^6.0.3
     "@semantic-release/commit-analyzer": ^13.0.0
     "@semantic-release/exec": ^6.0.3
     "@semantic-release/git": ^10.0.1
     "@semantic-release/release-notes-generator": ^14.0.1
-    "@types/node": ^22.7.6
+    "@types/node": ^22.7.7
     "@types/supertest": ^6.0.2
     "@typescript-eslint/eslint-plugin": ^8.10.0
     "@typescript-eslint/parser": ^8.10.0
@@ -717,7 +717,6 @@ __metadata:
     read-package-up: ^11.0.0
     supertest: ^7.0.0
     ts-node: ^10.9.2
-    tsconfig-paths: ^4.2.0
     typescript: ^5.6.3
     vitest: 2.1.3
   peerDependencies:
@@ -725,9 +724,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@openapi-typescript-infra/service@npm:^5.1.1":
-  version: 5.1.1
-  resolution: "@openapi-typescript-infra/service@npm:5.1.1"
+"@openapi-typescript-infra/service@npm:^5.1.2":
+  version: 5.1.2
+  resolution: "@openapi-typescript-infra/service@npm:5.1.2"
   dependencies:
     "@godaddy/terminus": ^4.12.1
     "@opentelemetry/api": ^1.9.0
@@ -761,7 +760,7 @@ __metadata:
     request-ip: ^3.3.0
   bin:
     start-service: build/bin/start-service.js
-  checksum: a0c6659aae92aa79ca186a51df82318842962729354ebde8e260f7863f64f73f991ae39383ce077660e94e210344bb980884fe07f5fa874ee64d2b1c0d3911ff
+  checksum: d3b7507a57ed87c040698474088da6e21782ef7128ece35f742bc23c3cc6623d0bbb08bff64d52fd8110c1e7ac45bd35b33d738d7b8e615fcc30c9caea1548ee
   languageName: node
   linkType: hard
 
@@ -1740,12 +1739,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:>=12.12.47, @types/node@npm:>=13.7.0, @types/node@npm:^22.7.6":
-  version: 22.7.6
-  resolution: "@types/node@npm:22.7.6"
+"@types/node@npm:*, @types/node@npm:>=12.12.47, @types/node@npm:>=13.7.0, @types/node@npm:^22.7.7":
+  version: 22.7.7
+  resolution: "@types/node@npm:22.7.7"
   dependencies:
     undici-types: ~6.19.2
-  checksum: 6afe2a1bd70ee0afa76c904ffdb04c634366987103bb2bef2d5b036f3bb49a4e828bb5e9fc64af442a76aaac4896df9277e725c843d85375d135aa71eb2fe3d9
+  checksum: 70492e46d92bf00b537c8700322ad001c1f8d4fc65fc1627064a91c7edebb8ad18730b95a3c6bdff212dd0252a337a4b92e4cfcbc21c9f08616302e87ea855b8
   languageName: node
   linkType: hard
 
@@ -5191,15 +5190,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"json5@npm:^2.2.2":
-  version: 2.2.3
-  resolution: "json5@npm:2.2.3"
-  bin:
-    json5: lib/cli.js
-  checksum: 2a7436a93393830bce797d4626275152e37e877b265e94ca69c99e3d20c2b9dab021279146a39cdb700e71b2dd32a4cebd1514cd57cee102b1af906ce5040349
-  languageName: node
-  linkType: hard
-
 "jsonfile@npm:^6.0.1":
   version: 6.1.0
   resolution: "jsonfile@npm:6.1.0"
@@ -7528,17 +7518,6 @@ __metadata:
     minimist: ^1.2.6
     strip-bom: ^3.0.0
   checksum: 59f35407a390d9482b320451f52a411a256a130ff0e7543d18c6f20afab29ac19fbe55c360a93d6476213cc335a4d76ce90f67df54c4e9037f7d240920832201
-  languageName: node
-  linkType: hard
-
-"tsconfig-paths@npm:^4.2.0":
-  version: 4.2.0
-  resolution: "tsconfig-paths@npm:4.2.0"
-  dependencies:
-    json5: ^2.2.2
-    minimist: ^1.2.6
-    strip-bom: ^3.0.0
-  checksum: 28c5f7bbbcabc9dabd4117e8fdc61483f6872a1c6b02a4b1c4d68c5b79d06896c3cc9547610c4c3ba64658531caa2de13ead1ea1bf321c7b53e969c4752b98c7
   languageName: node
   linkType: hard
 
