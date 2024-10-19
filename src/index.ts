@@ -1,9 +1,5 @@
 import http from 'http';
 import path from 'path';
-// We are going to test Typescript files, so use the ts-node
-// register hook to allow require to resolve these modules
-import { register } from 'node:module'
-import { pathToFileURL } from 'url'
 import assert from 'assert';
 
 import request from 'supertest';
@@ -24,7 +20,7 @@ let app: ServiceExpress | undefined;
 let appService: ServiceFactory<ServiceLocals, RequestLocals> | undefined;
 let listener: http.Server | undefined;
 
-register('ts-node/esm', pathToFileURL('./'));
+await import('tsx/esm');
 
 async function getRootDirectory(cwd: string, root?: string) {
   if (root) {
