@@ -1,3 +1,10 @@
+## [6.0.2](https://github.com/openapi-typescript-infra/service-tester/compare/v6.0.1...v6.0.2) (2024-10-19)
+
+
+### Bug Fixes
+
+* expose a start telemetry helper ([5188cce](https://github.com/openapi-typescript-infra/service-tester/commit/5188cce898091983cf755ae88ecb85389206ce2e))
+
 ## [6.0.1](https://github.com/openapi-typescript-infra/service-tester/compare/v6.0.0...v6.0.1) (2024-10-18)
 
 
