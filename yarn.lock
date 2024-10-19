@@ -856,7 +856,7 @@ __metadata:
     "@typescript-eslint/eslint-plugin": ^8.10.0
     "@typescript-eslint/parser": ^8.10.0
     "@vitest/coverage-v8": 2.1.3
-    coconfig: ^1.6.0
+    coconfig: ^1.6.1
     eslint: ^8.57.1
     eslint-config-prettier: ^9.1.0
     eslint-import-resolver-typescript: ^3.6.3
@@ -2811,9 +2811,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"coconfig@npm:^1.6.0":
-  version: 1.6.0
-  resolution: "coconfig@npm:1.6.0"
+"coconfig@npm:^1.6.1":
+  version: 1.6.1
+  resolution: "coconfig@npm:1.6.1"
   dependencies:
     dotgitignore: ^2.1.0
     find-up: ^4.1.0
@@ -2822,7 +2822,7 @@ __metadata:
     read-pkg-up: ^7.0.1
   bin:
     coconfig: build/bin/cli.js
-  checksum: c20e3ca6a0012c3d46bcd9df9fe55ca34b3dea53e90775f94c5d51532ff75a55b9aca95b3753f783acae1393e6961178a02686d2a4f35678997421fad55cece1
+  checksum: 07df8134955862d85c0c7a53c395956ea67dc302db84f5674bfd34dbd728fe6ae51b503532c95a68f86162f4c04f87f2645c996150f3f43268b6f1e3158ccf19
   languageName: node
   linkType: hard
 
