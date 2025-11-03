@@ -1,3 +1,15 @@
+# [7.0.0](https://github.com/openapi-typescript-infra/service-tester/compare/v6.1.1...v7.0.0) (2025-11-03)
+
+
+### Features
+
+* OTLP package updates and get latest service module ([1adfde3](https://github.com/openapi-typescript-infra/service-tester/commit/1adfde3cd9c9cb67bb589e3b9f6635d86967ad31))
+
+
+### BREAKING CHANGES
+
+* keeping in sync with service module version change
+
 ## [6.1.1](https://github.com/openapi-typescript-infra/service-tester/compare/v6.1.0...v6.1.1) (2024-10-19)
 
 
