@@ -4,23 +4,22 @@ on: [push]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v4
-    - name: Use Node.js 20
-      uses: actions/setup-node@v4
-      with:
-        node-version: 20
+      - uses: actions/checkout@v4
+      - name: Use Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
 
-    - name: npm install, lint, build, and test
-      run: |
-        npm config set '//registry.npmjs.org/:_authToken' "${NPM_TOKEN}"
-        yarn install --immutable
-        yarn lint
-        yarn build
-        yarn test --coverage
-      env:
-        NPM_TOKEN: ${{secrets.npm_token}}
-        CI: true
+      - name: npm install, lint, build, and test
+        run: |
+          npm config set '//registry.npmjs.org/:_authToken' "${NPM_TOKEN}"
+          yarn install --immutable
+          yarn lint
+          yarn build
+          yarn test --coverage
+        env:
+          NPM_TOKEN: ${{secrets.npm_token}}
+          CI: true
