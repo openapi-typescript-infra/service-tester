@@ -33,7 +33,14 @@ describe('Start and stop shared app', () => {
     rootDirectory: __dirname,
     codepath: 'src',
     name: 'fake-serv',
+    version: '0.0.0',
   };
+
+  test('Should load app with defaults', async () => {
+    await getReusableApp({
+      rootDirectory: __dirname,
+    });
+  });
 
   test('Start reusable app', async () => {
     const app = await getReusableApp(options);
@@ -57,8 +64,6 @@ describe('Start and stop shared app', () => {
     await request(app).get('/foobar').expect(404);
     await request(app).post('/').expect(500);
     vi.spyOn(app.locals.services.fakeServ, 'get_something').mockResolvedValue({
-      responseType: 'response',
-      status: 200,
       body: { things: ['a', 'b', 'c'] },
     });
     const { body } = await request(app).post('/').expect(200);
@@ -71,7 +76,7 @@ describe('Start and stop shared app', () => {
     await clearReusableApp();
     expect(flags.started).toEqual(1);
     expect(flags.stopped).toEqual(1);
-    expect(Promise.resolve().then(getExistingApp)).rejects.toThrow('requires a running app');
+    await expect(Promise.resolve().then(getExistingApp)).rejects.toThrow('requires a running app');
     const app = await getReusableApp(options);
     expect(flags.started).toEqual(2);
     expect(flags.stopped).toEqual(1);
@@ -79,11 +84,5 @@ describe('Start and stop shared app', () => {
     await clearReusableApp();
     expect(flags.started).toEqual(2);
     expect(flags.stopped).toEqual(2);
-  });
-
-  test('Should load app with defaults', async () => {
-    await getReusableApp({
-      rootDirectory: __dirname,
-    });
   });
 });

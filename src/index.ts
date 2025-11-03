@@ -87,8 +87,7 @@ async function readOptions<
 }
 
 class RequestTestingHelpers {
-  constructor(private app: ServiceExpress) {
-  }
+  constructor(private app: ServiceExpress) {}
 
   get request() {
     return request(this.app);
@@ -155,8 +154,10 @@ export async function clearReusableApp() {
   appService = undefined;
   try {
     if (oldListener) {
-      return new Promise((resolve) => {
-        oldListener?.close(resolve);
+      return await new Promise((resolve) => {
+        if (oldListener?.listening) {
+          oldListener?.close(resolve);
+        }
       });
     }
   } catch (error) {
