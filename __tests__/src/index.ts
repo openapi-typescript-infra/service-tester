@@ -1,4 +1,4 @@
-import { Service } from '@openapi-typescript-infra/service';
+import type { Service } from '@openapi-typescript-infra/service';
 
 export function service(): Service {
   return {

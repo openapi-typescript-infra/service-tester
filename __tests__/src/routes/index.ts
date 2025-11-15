@@ -1,6 +1,6 @@
-import { ServiceRouter } from '@openapi-typescript-infra/service';
+import type { ServiceRouter } from '@openapi-typescript-infra/service';
 
-import { FakeServLocals } from '../types';
+import type { FakeServLocals } from '../types';
 
 export function route(router: ServiceRouter<FakeServLocals>) {
   router.get('/', (req, res) => {

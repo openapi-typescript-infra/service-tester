@@ -1,4 +1,4 @@
-import http from 'http';
+import type http from 'http';
 import path from 'path';
 import assert from 'assert';
 
@@ -172,7 +172,7 @@ export async function getSimulatedContext<Config extends ConfigurationSchema = C
   return {
     name: 'fake-serv',
     version: '1.0.0',
-    config: config || ({} as Config),
+    config: config || {},
     logger: {
       level: 'debug',
       silent() {

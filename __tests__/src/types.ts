@@ -1,4 +1,4 @@
-import { ServiceLocals } from '@openapi-typescript-infra/service';
+import type { ServiceLocals } from '@openapi-typescript-infra/service';
 
 export interface FakeServLocals extends ServiceLocals {
   services: {

@@ -3,7 +3,7 @@ import type { Service, ServiceStartOptions } from '@openapi-typescript-infra/ser
 
 import { getReusableApp, clearReusableApp, getExistingApp, request } from '../src/index.js';
 
-import { FakeServLocals } from './src/types.js';
+import type { FakeServLocals } from './src/types.js';
 
 function getFakeServiceFn(flags: {
   started: number;
@@ -52,7 +52,7 @@ describe('Start and stop shared app', () => {
   });
 
   test('Should reuse app', async () => {
-    const app = await getExistingApp();
+    const app = getExistingApp();
     expect(app).toBeTruthy();
     expect(flags.started).toEqual(1);
     expect(flags.stopped).toEqual(0);
