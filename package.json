@@ -15,6 +15,11 @@
   "config": {
     "cpconfig": "@openapi-typescript-infra/cpconfig"
   },
+  "files": [
+    "build",
+    "src",
+    "README.md"
+  ],
   "peerDependencies": {
     "@openapi-typescript-infra/service": ">=6.0.0"
   },
