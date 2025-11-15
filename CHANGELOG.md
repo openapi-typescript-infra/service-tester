@@ -1,3 +1,10 @@
+## [7.1.1](https://github.com/openapi-typescript-infra/service-tester/compare/v7.1.0...v7.1.1) (2025-11-15)
+
+
+### Bug Fixes
+
+* list published files ([0afe0e7](https://github.com/openapi-typescript-infra/service-tester/commit/0afe0e7363b7ec7af0c5cdab46bf2800583f9956))
+
 # [7.1.0](https://github.com/openapi-typescript-infra/service-tester/compare/v7.0.0...v7.1.0) (2025-11-15)
 
 
