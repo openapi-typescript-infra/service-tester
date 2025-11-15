@@ -1,3 +1,10 @@
+# [7.1.0](https://github.com/openapi-typescript-infra/service-tester/compare/v7.0.0...v7.1.0) (2025-11-15)
+
+
+### Features
+
+* upgrade ts infra, fix peer dep ([75fd272](https://github.com/openapi-typescript-infra/service-tester/commit/75fd272368918854bd337cf07534e7959f422f1e))
+
 # [7.0.0](https://github.com/openapi-typescript-infra/service-tester/compare/v6.1.1...v7.0.0) (2025-11-03)
 
 
