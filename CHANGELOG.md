@@ -1,3 +1,12 @@
+## [7.1.2](https://github.com/openapi-typescript-infra/service-tester/compare/v7.1.1...v7.1.2) (2026-03-01)
+
+
+### Bug Fixes
+
+* in node 24+, don't load tsx/esm ([f162eb3](https://github.com/openapi-typescript-infra/service-tester/commit/f162eb3adbc53ca789ed74ebff35d1be53fe007c))
+* publish infra ([1455647](https://github.com/openapi-typescript-infra/service-tester/commit/14556478a80e413dbcd9f61ffc1804ada403c6f7))
+* publish infra for npm ([940c677](https://github.com/openapi-typescript-infra/service-tester/commit/940c677e19b5c1d5cb2756b5c58f67cecc1122f3))
+
 ## [7.1.1](https://github.com/openapi-typescript-infra/service-tester/compare/v7.1.0...v7.1.1) (2025-11-15)
 
 
