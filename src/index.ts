@@ -20,10 +20,7 @@ let app: ServiceExpress | undefined;
 let appService: ServiceFactory<ServiceLocals, RequestLocals> | undefined;
 let listener: http.Server | undefined;
 
-const handlesTs = parseInt(process.versions.node.split('.')[0], 10) >= 24;
-if (!handlesTs) {
-  await import('tsx/esm');
-}
+await import('tsx/esm');
 
 async function getRootDirectory(cwd: string, root?: string) {
   if (root) {
