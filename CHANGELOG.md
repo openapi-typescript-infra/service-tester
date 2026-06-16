@@ -1,3 +1,10 @@
+# [7.2.0](https://github.com/openapi-typescript-infra/service-tester/compare/v7.1.2...v7.2.0) (2026-06-16)
+
+
+### Features
+
+* even in node 24, tests sometimes load tsx and need help ([14be056](https://github.com/openapi-typescript-infra/service-tester/commit/14be056a9990ae8d404aa8d5be910b952b8932ce))
+
 ## [7.1.2](https://github.com/openapi-typescript-infra/service-tester/compare/v7.1.1...v7.1.2) (2026-03-01)
 
 
